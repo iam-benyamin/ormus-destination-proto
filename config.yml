@@ -1,1 +1,11 @@
+type: yml
 
+source:
+  http_server:
+    port: 8090
+    network: "tcp"
+redis:
+  port: 6379
+  host: localhost
+  db: 0
+  password: ""

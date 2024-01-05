@@ -1,3 +1,6 @@
 this is new branch file
 
 here is another line 
+
+after rebase
+

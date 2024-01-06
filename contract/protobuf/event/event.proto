@@ -1,1 +1,60 @@
-// TODO - Implement me
+syntax = "proto3";
+
+package event;
+
+import "google/protobuf/timestamp.proto";
+
+message CoreEvent {
+  string message_id = 1;
+  Type type = 2;
+  string name = 3;
+  Properties properties = 4;
+  Integrations integration = 5;
+  Context ctx = 6;
+  google.protobuf.Timestamp send_at = 7;
+  google.protobuf.Timestamp received_at = 8;
+  google.protobuf.Timestamp original_time_stamp = 9;
+  google.protobuf.Timestamp timestamp = 10;
+  string anonymous_id = 11;
+  string user_id = 12;
+  string group_id = 13;
+  string previous_id = 14;
+  string event = 15;
+  string write_key = 16;
+  MetaData meta_data = 17;
+  Options options = 18;
+}
+
+message MetaData {}
+
+message Options {
+  Integrations integrations = 1;
+  google.protobuf.Timestamp timestamp = 2;
+  Context ctx = 3;
+  string anonymous_id = 4;
+  string user_id = 5;
+  Traits traits = 6;
+  CustomData custom_data = 7;
+}
+
+message Integrations {
+  bool all = 1;
+  Properties config = 2;
+}
+
+message Type {
+  string value = 1;
+}
+
+message Properties {}
+
+message Context {}
+
+message ID {
+  string value = 1;
+}
+
+message Traits {}
+
+message CustomData {}
+
